@@ -1,4 +1,4 @@
-# {{trademark}} on Docker
+# Discuz! Q on Docker
 
 ![](https://libs.websoft9.com/common/websott9-cloud-installer.png) 
 
@@ -10,16 +10,16 @@ This repository is an **Cloud Native solution** powered by [Websoft9](https://ww
 
 ## System Requirements
 
-The following are the minimal [recommended requirements]({{requirements.url}}):
+The following are the minimal [recommended requirements](https://registry.hub.docker.com/_/mediawiki/):
 
 * **OS**: Red Hat, CentOS, Debian, Ubuntu or other's Linux OS
 * **Public Cloud**: More than 20+ major Cloud such as AWS, Azure, Google Cloud, Alibaba Cloud, HUAWEIClOUD, Tencent Cloud
 * **Private Cloud**: KVM, VMware, VirtualBox, OpenStack
-* **ARCH**:  {{requirements.cpu_arch}}
-* **RAM**: {{requirements.memory}} GB or more
-* **CPU**: {{requirements.cpu}} cores or higher
-* **HDD**: at least {{requirements.disk}} GB of free space
-* **Swap file**: at least {{requirements.swap}} GB
+* **ARCH**:  Linux x86-64, ARM 32/64, Windows x86-64, IBM POWER8, x86/i686
+* **RAM**: 2 GB or more
+* **CPU**: 1 cores or higher
+* **HDD**: at least 20 GB of free space
+* **Swap file**: at least 2 GB
 * **bandwidth**: more fluent experience over 100M  
 
 ## QuickStart
@@ -29,20 +29,20 @@ The following are the minimal [recommended requirements]({{requirements.url}}):
 Use SSH to connect your instance and run the automatic installation script below
 
 ```
-sudo wget -N https://raw.githubusercontent.com/Websoft9/StackHub/main/docker-installer.sh; sudo bash docker-installer.sh -r {{name}}
+sudo wget -N https://raw.githubusercontent.com/Websoft9/StackHub/main/docker-installer.sh; sudo bash docker-installer.sh -r discuzq
 ```
 ### package install
 
 1.Make package
 You can get the  package as following script
 ```
-sudo wget -N https://raw.githubusercontent.com/Websoft9/StackHub/main/docker-installer.sh; sudo bash docker-installer.sh -r {{name}} -p
+sudo wget -N https://raw.githubusercontent.com/Websoft9/StackHub/main/docker-installer.sh; sudo bash docker-installer.sh -r discuzq -p
 ```
 
 2.Install by package
 Copy package to your server, Use SSH to connect your instance and run the automatic installation script below
 ```
-sudo bash install-{{name}}
+sudo bash install-discuzq
 ```
 
 ### Manual Installation
@@ -59,23 +59,13 @@ ln -sf /usr/local/bin/docker-compose  /usr/bin
 sudo systemctl start docker
 ```
 
-#### Install {{trademark}}
+#### Install discuzq
 
-We assume that you are already familiar with Docker, and you can modify [docker-compose file]({{compose_file}}) by yourself
+We assume that you are already familiar with Docker, and you can modify [docker-compose file](docker-compose.yml) by yourself
 
 ```
-git clone --depth=1 https://github.com/Websoft9/docker-{{name}}
-cd docker-{{name}}
-{% if command_extra is defined -%}
-{% for cmd in command_extra -%}
-{{cmd.cmd}}  
-{% endfor -%}  
-{% endif -%}
-{% if command_comments is defined -%}
-{% for comment in command_comments -%}
-# {{comment.comment_en}}  
-{% endfor -%}  
-{% endif -%}
+git clone --depth=1 https://github.com/Websoft9/docker-discuzq
+cd docker-discuzq
 docker-compose  up -d
 ```
 
@@ -87,45 +77,27 @@ Yes, you should modify all database password and application password at docker-
 #### Docker runing failed for the reason that port conflict?
 You should modify ports at [docker-compose file](docker-compose-production.yml) and docker-compose again
 
-{% for faq in faqs -%}
-#### {{faq.question_en}}  
-{{faq.answer_en}}  
-
-{% endfor -%}  
-
+#### Error when I access Mediawiki index page first time?  
+Yes, you must complete the installation wizard  
 
 ### Usage instructions
 
-You can point your browser to: *`http://Instance's Internet IP:{{services[0].port}}`*  
+You can point your browser to: *`http://Instance's Internet IP:9001`*  
 
 The following is the information that may be needed during use
-
-{% if user is defined -%}
-#### Credentials
-
-By default, the available users are:
-
-| Username    | Password |
-| ------- | -------- |
-|  {{user.username}} | {{user.password}}  |
-
-{% endif -%}
 
 #### Services and Ports
 
 | Service | Port | Use |  Necessity |
 | --- | --- | --- | --- |
-{% for service in services -%}
-| {{service.name}} | {{service.port}} | {{service.description_en}} | {{service.required}} |
-{% endfor -%} 
-
+| Discuz! Q | 9001 | Browser access to Discuz! Q Document by http | Y |
 ## Documentation
 
-[{{trademark}} Administrator Guide](https://support.websoft9.com/docs/{{name}})
+[Discuz! Q Administrator Guide](https://support.websoft9.com/docs/discuz)
 
 ## Enterprise Support
 
-If you want to get our Enterprise Support to ensure high availability of applications, you can subscribe our [{{trademark}} Enterprise Support](https://apps.websoft9.com/{{name}}) 
+If you want to get our Enterprise Support to ensure high availability of applications, you can subscribe our [Discuz! Q Enterprise Support](https://apps.websoft9.com/discuz) 
 
 What you get with a Enterprise Support subscription?
 
