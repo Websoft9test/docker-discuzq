@@ -1,6 +1,10 @@
-## About
+# DiscuzQ
 
-This repository is forked from ONLYOFFICE/Docker-CommunityServer, we have the following modifications are provided
 
-* replace README.md
-* add README-zh.md, CHANGELOG.md, Note.md, License.md, docker-compose.yml,.env, src, .github folder
+## 安装
+
+DiscuzQ 镜像包含MySQL，但出于维护考虑，本项目没有使用内置 MySQL
+
+## To do
+
+* 自动完成初始化向导（暂无方案）
