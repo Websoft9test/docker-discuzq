@@ -10,7 +10,7 @@ services:
     ports:
       - ${APP_PORT}:80
     volumes:
-      - discuzq:/var/lib/discuz
+      - discuzq:/var/www/discuz
     restart: always
     
   mysql:
