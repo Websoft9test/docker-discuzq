@@ -11,6 +11,7 @@ ENV DISCUZQ_MYSQL_USER
 ENV DISCUZQ_MYSQL_PASSWORD
 ENV DISCUZQ_MYSQL_DATABASE
 
-COPY installwizard.sh /tmp
+COPY cmd.sh /tmp
+RUN chmod +x /tmp/cmd.sh
 
-CMD ["/usr/sbin/supervisord", "-c", "/etc/supervisord.conf"]
+CMD ["/tmp/cmd.sh"]
