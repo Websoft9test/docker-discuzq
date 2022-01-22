@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 # Replace DB connetion
 sed -i "s/forumTitle.*/forumTitle\" value=\"$DISCUZQ_SITENAME\">/g" /var/www/discuz/resources/views/install/install.blade.php
 sed -i "s/mysqlHost.*/mysqlHost\" value=\"$DISCUZQ_MYSQL_HOST\">/g" /var/www/discuz/resources/views/install/install.blade.php
@@ -12,6 +11,5 @@ sed -i "s/adminUsername.*/adminUsername\" value=\"$DISCUZQ_USER\">/g" /var/www/d
 
 # CMD from ccr.ccs.tencentyun.com/discuzq/dzq:latest
 /usr/sbin/supervisord -c /etc/supervisord.conf
-
 
 # Install wizard
