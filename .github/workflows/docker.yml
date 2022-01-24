@@ -3,9 +3,7 @@ name: Docker Build And Push To Docker Hub
 on:
   push:
     branches: [ main ]
-    paths: 
-       - 'Dockerfile'
-       - 'cmd.sh'
+
 jobs:
   build:
     name: Build Docker image
