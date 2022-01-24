@@ -16,6 +16,7 @@ jobs:
         run: |
           repo=${{github.event.repository.name}}
           APP_NAME=${repo:7}
+          echo "APP_NAME=${APP_NAME}" >> $GITHUB_ENV
           
       - uses: mr-smithers-excellent/docker-build-push@v5
         name: Build & push Docker image
