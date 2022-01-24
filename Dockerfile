@@ -12,6 +12,7 @@ ENV DISCUZQ_MYSQL_PASSWORD=discuzq
 ENV DISCUZQ_MYSQL_DATABASE=discuzq
 ENV DISCUZQ_SITENAME=DiscuzQ
 
+
 COPY cmd.sh /tmp
 RUN chmod +x /tmp/cmd.sh
 
