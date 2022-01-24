@@ -8,11 +8,16 @@ jobs:
   build:
     name: Build Docker image
     runs-on: ubuntu-latest
-    env:
-      repo: ${{github.event.repository.name}}
     steps:
       - uses: actions/checkout@v2
         name: Check out code
+        
+      - name: Set the value
+        id: step_one
+        run: |
+          repo=${{github.event.repository.name}}
+          APP_NAME=${repo:7}
+          echo "APP_NAME=${APP_NAME}" >> $GITHUB_ENV
           
       - uses: mr-smithers-excellent/docker-build-push@v5
         name: Build & push Docker image
@@ -23,5 +28,3 @@ jobs:
           dockerfile: Dockerfile
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-        env:
-          APP_NAME: ${env.repo:7}
