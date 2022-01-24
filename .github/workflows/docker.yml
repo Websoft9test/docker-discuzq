@@ -11,15 +11,17 @@ jobs:
     name: Build Docker image
     runs-on: ubuntu-latest
     env:
-      APP_NAME: ${repo:7}
+      APP_NAME: template
     steps:
       - uses: actions/checkout@v2
         name: Check out code
         
       - name: get repository name
         run: |
-         repo=${{github.event.repository.name}}
-         
+          repo=${{github.event.repository.name}}
+        env:
+          APP_NAME: ${repo:7}
+          
       - uses: mr-smithers-excellent/docker-build-push@v5
         name: Build & push Docker image
         with:
