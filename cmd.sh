@@ -12,3 +12,4 @@ sed -i "s/tablePrefix.*/tablePrefix\" value=\"discuzq\">/g" /var/www/discuz/reso
 /usr/sbin/supervisord -c /etc/supervisord.conf
 
 # Install wizard
+
