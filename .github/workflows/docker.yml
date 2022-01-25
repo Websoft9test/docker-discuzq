@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       repo: ${{github.event.repository.name}}
-      APP_NAME: ${repo:7}
+      APP_NAME: ${env.repo:7}
       TAGNAME: latest
     steps:
       - uses: actions/checkout@v2
