@@ -3,6 +3,9 @@ name: Docker Build And Push To Docker Hub
 on:
   push:
     branches: [ main ]
+    paths: 
+      - 'Dockerfile'
+      - 'cmd.sh'
     tags:
       - v**
 jobs:
@@ -11,11 +14,15 @@ jobs:
     runs-on: ubuntu-latest
     env:
       TAGNAME: latest
-      repo: ${{github.event.repository.name}}
-      APP_NAME: ${repo:7}
     steps:
       - uses: actions/checkout@v2
         name: Check out code
+
+      - name: Set appname
+        run: |
+          repo=${{github.event.repository.name}}
+          APP_NAME=${repo:7}
+          echo "APP_NAME=${APP_NAME}" >> $GITHUB_ENV
         
       - name: Get all tags when release a tag
         if: ${{ github.ref_name != 'main' }}
