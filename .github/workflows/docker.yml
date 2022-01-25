@@ -7,7 +7,7 @@ on:
       - 'Dockerfile'
       - 'cmd.sh'
     tags:
-     - v**
+      - v**
 jobs:
   build:
     name: Build Docker image
