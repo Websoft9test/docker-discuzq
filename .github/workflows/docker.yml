@@ -9,15 +9,16 @@ jobs:
     name: Build Docker image
     runs-on: ubuntu-latest
     env:
-      repo: ${{github.event.repository.name}}
-      APP_NAME: ${env.repo:7}
       TAGNAME: latest
     steps:
       - uses: actions/checkout@v2
         name: Check out code
 
-      - uses: actions/checkout@v2
-        name: Check out code
+      - name: Set appname
+        run: |
+          repo=${{github.event.repository.name}}
+          APP_NAME=${repo:7}
+          echo "APP_NAME=${APP_NAME}" >> $GITHUB_ENV
         
       - name: Get all tags when release a tag
         if: ${{ github.ref_name != 'main' }}
