@@ -36,10 +36,10 @@ services:
       MYSQL_PASSWORD: ${DB_MYSQL_PASSWORD}
       MYSQL_ROOT_PASSWORD: ${DB_MYSQL_PASSWORD}
 
-networks:
-  default:
-      name: ${APP_NAME}
-
 volumes:
   discuzq:
   mysql:
+
+networks:
+  default:
+      name: ${APP_NAME}
