@@ -23,7 +23,7 @@ services:
       
   mysql:
     image: mysql:${DB_MYSQL_VERSION}
-    container_name: ${APP_NAME}-mysql
+    container_name: ${APP_NAME}-db
     restart: always
     ports:
      - ${DB_MYSQL_PORT}:3306
