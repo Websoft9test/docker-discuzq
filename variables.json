@@ -26,8 +26,6 @@
       "answer_cn": "填写 mysql 即可",
       "question_en": "What value of MySQL Host item at DiscuzQ install wizard?",
       "answer_en": "mysql"
-    },
-
+    }
   ]
-
 }
