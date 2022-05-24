@@ -5,6 +5,7 @@
 
 1. DiscuzQ 镜像包含MySQL，但出于维护考虑，本项目没有使用内置 MySQL.
 2. 官方默认挂载到：/var/lib/discuz，但这个目录下没有源码。只有挂载到：/var/www/discuz 才有源码
+3. 官方提供了不包含 DB 的版本，但测试失败，暂无文档支持，放弃（[issue](https://github.com/Websoft9/docker-discuzq/issues/3)）
 
 ## 安装向导优化
 
