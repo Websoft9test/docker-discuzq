@@ -5,7 +5,7 @@ version: '3.8'
 
 services:
   discuzq:
-    image: ccr.ccs.tencentyun.com/discuzq/dzq/discuzq:${APP_VERSION}
+    image: ccr.ccs.tencentyun.com/discuzq/dzq:${APP_VERSION}
     container_name: ${APP_NAME}
     ports:
       - ${APP_PORT}:80
